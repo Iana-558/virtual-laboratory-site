@@ -75,7 +75,7 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* ===== ГЕРОЙ (ГЛАВНЫЙ ЭКРАН) ===== */
+/* ===== Главное ===== */
 .hero {
     background: linear-gradient(135deg, #2c3e66, #1a3a5f);
     color: white;
@@ -90,13 +90,10 @@ nav ul li a.active {
 
 .highlight {
     color: #ffaa33;
-    position: relative;
-    display: inline-block;
 }
 
 .hero-subtitle {
     font-size: 22px;
-    opacity: 0.95;
     margin-bottom: 30px;
 }
 
@@ -113,7 +110,6 @@ nav ul li a.active {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
 .btn-primary {
@@ -166,7 +162,7 @@ nav ul li a.active {
     border-radius: 2px;
 }
 
-/* ===== КАРТОЧКИ (актуальность) ===== */
+/* ===== КАРТОЧКИ АКТУАЛЬНОСТИ ===== */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -198,11 +194,7 @@ nav ul li a.active {
     color: #1e3a5f;
 }
 
-.card p {
-    color: #555;
-}
-
-/* ===== СТАТИСТИКА (лабораторные работы) ===== */
+/* ===== СТАТИСТИКА ===== */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -225,12 +217,6 @@ nav ul li a.active {
 .stat-number {
     font-size: 56px;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    font-size: 18px;
-    opacity: 0.95;
 }
 
 /* ===== СКРИНШОТЫ ===== */
@@ -243,12 +229,13 @@ nav ul li a.active {
 
 .screenshot {
     text-align: center;
-    max-width: 250px;
+    max-width: 400px;
 }
 
 .screenshot img {
     width: 100%;
-    border-radius: 30px;
+    max-width: 400px;
+    border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -269,12 +256,13 @@ nav ul li a.active {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
-    overflow: hidden;
     border-radius: 25px;
+    overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe,
+.video-wrapper video {
     position: absolute;
     top: 0;
     left: 0;
@@ -290,7 +278,48 @@ nav ul li a.active {
     font-style: italic;
 }
 
-/* ===== ПАРТНЁРЫ ===== */
+/* ===== МЕРЧ (широкие карточки) ===== */
+.merch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.merch-item {
+    background: white;
+    border-radius: 25px;
+    padding: 30px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.merch-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.merch-item img {
+    width: 260px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.merch-item h3 {
+    color: #1e3a5f;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.merch-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===== ПАРТНЁРЫ / ВУЗ (вертикальные картинки повыше) ===== */
 .partners {
     background: linear-gradient(135deg, #1e3a5f, #2c3e66);
     color: white;
@@ -304,21 +333,68 @@ nav ul li a.active {
     background: #ffaa33;
 }
 
-.partners-content {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-    font-size: 18px;
+.university-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.partner-badge {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 15px 30px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 50px;
+@media (max-width: 768px) {
+    .university-showcase {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.showcase-text {
     font-size: 18px;
+    line-height: 1.6;
+}
+
+.showcase-text p {
+    margin-bottom: 20px;
+}
+
+.showcase-badge {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50px;
+    font-size: 16px;
     font-weight: bold;
+}
+
+.showcase-images {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.showcase-card {
+    text-align: center;
+    width: 220px;
+}
+
+.showcase-card img {
+    width: 300px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+}
+
+.showcase-card img:hover {
+    transform: scale(1.03);
+}
+
+.showcase-card p {
+    margin-top: 12px;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
 /* ===== ПОДВАЛ ===== */
@@ -329,13 +405,10 @@ footer {
     padding: 40px 0;
 }
 
-footer .container p {
-    margin: 5px 0;
-}
-
 .footer-small {
     font-size: 14px;
     opacity: 0.7;
+    margin-top: 10px;
 }
 
 /* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
@@ -357,129 +430,17 @@ footer .container p {
         font-size: 28px;
     }
     
-    .card {
-        padding: 30px 20px;
+    .screenshot {
+        max-width: 220px;
     }
     
-    .btn {
-        padding: 10px 24px;
-    }
-    /* ===== ЛОКАЛЬНОЕ ВИДЕО ===== */
-    .video-wrapper video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 25px;
-    }
-
-    video {
-        width: 100%;
-        border-radius: 25px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-    /* ===== МАСКОТ ===== */
-    .hero-mascot {
-        margin-top: 40px;
-        text-align: center;
-    }
-    .mascot-img {
-        max-width: 200px;
-        border-radius: 30px;
-        background: rgba(255,255,255,0.1);
-        padding: 15px;
-        transition: all 0.3s ease;
-    }
-    .mascot-img:hover {
-        transform: scale(1.05) rotate(5deg);
-    }
-    .mascot-caption {
-        margin-top: 15px;
-        font-size: 16px;
-        opacity: 0.9;
-    }
-    /* ===== МЕРЧ ===== */
-    .merch-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-    }
-    .merch-item {
-        background: white;
-        border-radius: 20px;
-        padding: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-    .merch-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
     .merch-item img {
-        width: 100%;
-        max-width: 200px;
-        border-radius: 15px;
-        margin-bottom: 15px;
+        width: 140px;
+        height: 140px;
     }
-    .merch-item h3 {
-        color: #1e3a5f;
-        margin-bottom: 10px;
-    }
-    .merch-item p {
-        font-size: 14px;
-        color: #666;
-    }
-    /* ===== СТРАНИЦА УЧАСТНИКОВ ===== */
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-    }
-    .team-card {
-        background: white;
-        border-radius: 25px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-    }
-    .team-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-    .team-card.featured {
-        border: 3px solid #ffaa33;
-        background: linear-gradient(135deg, #ffffff, #fff9f0);
-    }
-    .team-icon {
-        font-size: 56px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .team-card h3 {
-        font-size: 28px;
-        text-align: center;
-        color: #1e3a5f;
-        margin-bottom: 5px;
-    }
-    .team-role {
-        text-align: center;
-        color: #ffaa33;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    .team-contribution h4 {
-        color: #2c3e66;
-        margin-bottom: 10px;
-        border-left: 4px solid #ffaa33;
-        padding-left: 12px;
-    }
-    .team-contribution ul {
-        padding-left: 25px;
-        line-height: 1.8;
-    }
-    .inner-list {
-        padding-left: 30px;
-        margin-top: 5px;
-        margin-bottom: 10px;
+    
+    .showcase-card img {
+        width: 160px;
+        height: 240px;
     }
 }
