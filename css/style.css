@@ -429,4 +429,57 @@ footer .container p {
         font-size: 14px;
         color: #666;
     }
+    /* ===== СТРАНИЦА УЧАСТНИКОВ ===== */
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+    .team-card {
+        background: white;
+        border-radius: 25px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .team-card.featured {
+        border: 3px solid #ffaa33;
+        background: linear-gradient(135deg, #ffffff, #fff9f0);
+    }
+    .team-icon {
+        font-size: 56px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .team-card h3 {
+        font-size: 28px;
+        text-align: center;
+        color: #1e3a5f;
+        margin-bottom: 5px;
+    }
+    .team-role {
+        text-align: center;
+        color: #ffaa33;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    .team-contribution h4 {
+        color: #2c3e66;
+        margin-bottom: 10px;
+        border-left: 4px solid #ffaa33;
+        padding-left: 12px;
+    }
+    .team-contribution ul {
+        padding-left: 25px;
+        line-height: 1.8;
+    }
+    .inner-list {
+        padding-left: 30px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
 }
