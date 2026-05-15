@@ -3,57 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виртуальная лаборатория - главная</title>
+    <title>Виртуальная лаборатория — наука в твоём телефоне</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- МЕНЮ НАВИГАЦИИ -->
     <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="about.html">О проекте</a></li>
-            <li><a href="team.html">Участники</a></li>
-            <li><a href="journal.html">Журнал</a></li>
-            <li><a href="resources.html">Ресурсы</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🧪</span>
+                <span class="logo-text">Виртуальная лаборатория</span>
+            </div>
+            <ul>
+                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="about.html">О проекте</a></li>
+                <li><a href="team.html">Участники</a></li>
+                <li><a href="journal.html">Журнал</a></li>
+                <li><a href="resources.html">Ресурсы</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <header>
-        <h1>Виртуальная лаборатория</h1>
-        <p>Интерактивные лабораторные работы по физике, химии и биологии для школьников 7-9 классов</p>
-    </header>
+    <!-- ГЕРОЙ (ГЛАВНЫЙ ЭКРАН С ЗАГОЛОВКОМ) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Лаборатория <span class="highlight">в кармане</span></h1>
+            <p class="hero-subtitle">Физика • Химия • Биология для 7–9 классов<br>с элементами геймификации</p>
+            <div class="hero-buttons">
+                <a href="about.html" class="btn btn-primary">Узнать больше</a>
+                <a href="journal.html" class="btn btn-secondary">Смотреть прогресс</a>
+            </div>
+            <div class="hero-mascot">
+                <img src="images/mascot.png" alt="Маскот Виртуальной лаборатории" class="mascot-img">
+                <p class="mascot-caption">Наш маскот — главный помощник в мире науки!</p>
+            </div>
+        </div>
+    </section>
 
-    <main>
-        <section>
-            <h2>О проекте коротко</h2>
-            <p><strong>Виртуальная лаборатория</strong> — это мобильное приложение с элементами геймификации, которое позволяет выполнять лабораторные работы без реального оборудования. Достаточно телефона и интернета.</p>
+    <!-- БЛОК АКТУАЛЬНОСТИ (3 причины) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Почему это важно?</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🏫</div>
+                    <h3>Нет оборудования?</h3>
+                    <p>Виртуальная лаборатория решает проблему отсутствия реального оборудования в школах с ограниченными ресурсами.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Учись из дома</h3>
+                    <p>Выполняй лабораторные работы из любой точки мира, где есть интернет. Никаких ограничений!</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎮</div>
+                    <h3>Геймификация</h3>
+                    <p>Зарабатывай баллы, открывай достижения и соревнуйся с друзьями. Наука становится увлекательной!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК С ЛАБОРАТОРНЫМИ РАБОТАМИ -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Что внутри?</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Лабораторных работ по физике</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Лабораторных работ по химии</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Лабораторных работ по биологии</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК СО СКРИНШОТАМИ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Как это выглядит?</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot">
+                    <img src="images/app-main.jpg" alt="Главный экран приложения" onerror="this.src='https://placehold.co/250x500/3a6ea5/white?text=Главный+экран'">
+                    <p>Главный экран</p>
+                </div>
+                <div class="screenshot">
+                    <img src="images/lab-physics.jpg" alt="Лабораторная по физике" onerror="this.src='https://placehold.co/250x500/3a6ea5/white?text=Физика'">
+                    <p>Лабораторная по физике</p>
+                </div>
+                <div class="screenshot">
+                    <img src="images/achievements.jpg" alt="Достижения и геймификация" onerror="this.src='https://placehold.co/250x500/3a6ea5/white?text=Достижения'">
+                    <p>Достижения и геймификация</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК С ВИДЕО (простой вариант) -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Смотри в действии</h2>
+            <div style="text-align: center;">
+                <video width="100%" controls style="max-width: 800px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <source src="images/Физика_8-4_веб_версия.mp4" type="video/mp4">
+                    <source src="images/Физика_8-4_веб_версия.webm" type="video/webm">
+                    Твой браузер не поддерживает видео
+                </video>
+            </div>
+            <p class="video-caption">▶️ Нажми на кнопку play, чтобы посмотреть демонстрацию</p>
+        </div>
+    </section>
+    <!-- БЛОК С МЕРЧЕМ -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Наш мерч 🎁</h2>
+                <div class="merch-grid">
+                    <div class="merch-item">
+                        <img src="images/merch-sticker.jpg" alt="Стикеры с маскотом">
+                        <h3>Стикеры</h3>
+                        <p>Набор стикеров с главным маскотом и лабораторным оборудованием</p>
+                    </div>
+                    <div class="merch-item">
+                        <img src="images/merch-t-shirt.jpg" alt="Футболка">
+                        <h3>Футболка</h3>
+                        <p>«Я люблю виртуальную науку» — эксклюзивный дизайн</p>
+                    </div>
+                    <div class="merch-item">
+                        <img src="images/merch-notebook.jpg" alt="Блокнот">
+                        <h3>Блокнот</h3>
+                        <p>Для записей наблюдений и формул</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Почему это важно?</h2>
-            <ul>
-                <li> <strong>Решает проблему отсутствия оборудования</strong> в школах с ограниченными ресурсами</li>
-                <li> <strong>Позволяет учиться из дома</strong> — лабораторные работы доступны 24/7</li>
-                <li> <strong>Повышает интерес к науке</strong> через интерактивность, визуализацию и геймификацию</li>
-            </ul>
-        </section>
+    <!-- ПАРТНЁРЫ И СТАЖИРОВКИ -->
+    <section class="section partners">
+        <div class="container">
+            <h2 class="section-title">Наши партнёры</h2>
+            <div class="partners-content">
+                <p>Проект выполняется при поддержке Московского политехнического университета.</p>
+                <div class="partner-badge">
+                    <span>🤝</span> Присоединяйся к команде
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Что входит в приложение?</h2>
-            <ul>
-                <li>🔬 9 лабораторных работ по <strong>физике</strong></li>
-                <li>🧪 6 лабораторных работ по <strong>химии</strong></li>
-                <li>🌿 9 лабораторных работ по <strong>биологии</strong></li>
-            </ul>
-        </section>
-
-        <img src="images/lab-preview.jpg" alt="Пример виртуальной лаборатории" style="max-width:100%; margin-top:30px;" onerror="this.src='https://via.placeholder.com/800x400?text=Тут+будет+изображение+лаборатории'">
-        
-        <p style="font-style:italic; margin-top:30px;">Проект выполняется при поддержке партнёров. Стажировки засчитываются в оценку.</p>
-    </main>
-
+    <!-- ПОДВАЛ -->
     <footer>
-        <p>© 2025 Проект «Виртуальная лаборатория». Все права защищены.</p>
+        <div class="container">
+            <p>© 2025 Проект «Виртуальная лаборатория». Все права защищены.</p>
+            <p class="footer-small">Проектная деятельность — создание статического веб-сайта</p>
+        </div>
     </footer>
 
 </body>
