@@ -10,6 +10,7 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #e9eef5 100%);
     color: #1a2a3a;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 .container {
@@ -75,7 +76,7 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* ===== Главное ===== */
+/* ===== ГЕРОЙ ===== */
 .hero {
     background: linear-gradient(135deg, #2c3e66, #1a3a5f);
     color: white;
@@ -229,12 +230,12 @@ nav ul li a.active {
 
 .screenshot {
     text-align: center;
-    max-width: 400px;
+    max-width: 280px;
 }
 
 .screenshot img {
     width: 100%;
-    max-width: 400px;
+    max-width: 280px;
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
@@ -278,7 +279,7 @@ nav ul li a.active {
     font-style: italic;
 }
 
-/* ===== МЕРЧ (широкие карточки) ===== */
+/* ===== МЕРЧ ===== */
 .merch-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -300,7 +301,7 @@ nav ul li a.active {
 }
 
 .merch-item img {
-    width: 260px;
+    width: 180px;
     height: 180px;
     object-fit: cover;
     border-radius: 20px;
@@ -319,7 +320,7 @@ nav ul li a.active {
     color: #666;
 }
 
-/* ===== ПАРТНЁРЫ / ВУЗ (вертикальные картинки повыше) ===== */
+/* ===== ПАРТНЁРЫ / ВУЗ ===== */
 .partners {
     background: linear-gradient(135deg, #1e3a5f, #2c3e66);
     color: white;
@@ -368,7 +369,7 @@ nav ul li a.active {
 
 .showcase-images {
     display: flex;
-    gap: 100px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -379,7 +380,7 @@ nav ul li a.active {
 }
 
 .showcase-card img {
-    width: 300px;
+    width: 220px;
     height: 320px;
     object-fit: cover;
     border-radius: 25px;
@@ -397,6 +398,123 @@ nav ul li a.active {
     opacity: 0.9;
 }
 
+/* ===== СТРАНИЦА УЧАСТНИКОВ (team.html) ===== */
+
+.section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contribution-block {
+    background: white;
+    border-radius: 25px;
+    padding: 35px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contribution-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.contribution-block.personal {
+    background: linear-gradient(135deg, #fff9f0, #ffffff);
+    border: 2px solid #ffaa33;
+}
+
+.block-title {
+    font-size: 28px;
+    color: #1e3a5f;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #ffaa33;
+    display: inline-block;
+}
+
+.personal-content {
+    text-align: center;
+}
+
+.personal-content h3 {
+    color: #2c3e66;
+    margin: 25px 0 10px 0;
+    font-size: 20px;
+}
+
+.theme-desc {
+    color: #ffaa33;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.lab-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    text-align: left;
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px 30px;
+    max-width: 600px;
+}
+
+.lab-list li {
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 15px;
+}
+
+.lab-list li:last-child {
+    border-bottom: none;
+}
+
+.lab-list li::before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+    color: #ffaa33;
+}
+
+.demo-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.demo-video-item {
+    text-align: center;
+}
+
+.demo-video-item video {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.demo-video-item p {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #555;
+}
+
+.block-content {
+    line-height: 1.7;
+    color: #444;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* ===== ПОДВАЛ ===== */
 footer {
     background: #0f1a24;
@@ -411,7 +529,25 @@ footer {
     margin-top: 10px;
 }
 
-/* ===== АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ ===== */
+/* ===== АДАПТАЦИЯ ДЛЯ РАЗНЫХ ЭКРАНОВ ===== */
+
+/* Для планшетов */
+@media (max-width: 1200px) {
+    .section .container {
+        max-width: 95%;
+        padding: 0 20px;
+    }
+    
+    .contribution-block {
+        padding: 25px;
+    }
+    
+    .block-title {
+        font-size: 24px;
+    }
+}
+
+/* Для телефонов */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -430,6 +566,40 @@ footer {
         font-size: 28px;
     }
     
+    .contribution-block {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .block-title {
+        font-size: 20px;
+    }
+    
+    .personal-content h3 {
+        font-size: 18px;
+    }
+    
+    .lab-list {
+        padding: 15px;
+    }
+    
+    .lab-list li {
+        font-size: 13px;
+    }
+    
+    .demo-videos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .demo-video-item video {
+        max-width: 280px;
+    }
+    
+    .block-content {
+        font-size: 14px;
+    }
+    
     .screenshot {
         max-width: 220px;
     }
@@ -442,5 +612,78 @@ footer {
     .showcase-card img {
         width: 160px;
         height: 240px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .section .container {
+        max-width: 1100px;
+    }
+    
+    .contribution-block {
+        max-width: 1000px;
+    }
+    
+    .block-title {
+        font-size: 32px;
+    }
+    
+    .personal-content h3 {
+        font-size: 24px;
+    }
+    /* ===== ВИДЕО НА СТРАНИЦЕ УЧАСТНИКОВ ===== */
+    .demo-videos-two-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .mobile-video {
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .mobile-video video {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .web-videos {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .web-video-item video {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .web-video-item p {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    @media (max-width: 850px) {
+        .demo-videos-two-columns {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .web-videos {
+            max-width: 100%;
+            width: 100%;
+        }
+    
+        .web-video-item video {
+            max-width: 100%;
+        }
     }
 }
