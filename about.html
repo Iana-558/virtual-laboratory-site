@@ -210,6 +210,168 @@
             font-size: 18px;
         }
     }
+	    /* ===== БЛОК О МАСКОТЕ И ПАБЛИКЕ ===== */
+    .mascot-social-block {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+    .mascot-card {
+        background: linear-gradient(135deg, #fff9f0, #ffffff);
+        border-radius: 30px;
+        padding: 30px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+
+    .mascot-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .mascot-avatar img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #ffaa33;
+        padding: 10px;
+    }
+
+    .mascot-info h3 {
+        color: #1e3a5f;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .mascot-info p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .mascot-facts {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .mascot-facts span {
+        background: #e8f0f8;
+        color: #1e3a5f;
+        padding: 5px 12px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .social-card {
+        background: linear-gradient(135deg, #1e3a5f, #2c3e66);
+        border-radius: 30px;
+        padding: 30px;
+        color: white;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .social-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .social-card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .social-card p {
+        opacity: 0.9;
+        margin-bottom: 25px;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    .social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .social-link.telegram {
+        background: #0088cc;
+        color: white;
+    }
+
+    .social-link.vk {
+        background: #4c75a3;
+        color: white;
+    }
+
+    .social-link.website {
+        background: #ffaa33;
+        color: #1e3a5f;
+    }
+
+    .social-link:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.05);
+    }
+
+    .social-stats {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .social-stats .stat-item {
+        text-align: center;
+    }
+
+    .social-stats .stat-number {
+        display: block;
+        font-size: 28px;
+        font-weight: bold;
+        color: #ffaa33;
+    }
+
+    .social-stats .stat-label {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        .mascot-card {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .mascot-facts {
+            justify-content: center;
+        }
+        
+        .social-stats {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
     </style>
 </head>
 <body>
@@ -221,8 +383,8 @@
                 <span class="logo-text">Виртуальная лаборатория</span>
             </div>
             <ul>
-                <li><a href="index.html" class="active">Главная</a></li>
-                <li><a href="about.html">О проекте</a></li>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html" class="active">О проекте</a></li>
                 <li><a href="team.html">Участники</a></li>
                 <li><a href="journal.html">Журнал</a></li>
                 <li><a href="resources.html">Ресурсы</a></li>
@@ -315,6 +477,47 @@
 
         </div>
     </section>
+	<!-- БЛОК О МАСКОТЕ И ПАБЛИКЕ -->
+        <div class="mascot-social-block">
+            <div class="mascot-card">
+                <div class="mascot-avatar">
+                    <img src="images/mascot.png" alt="Маскот Виртуальной лаборатории" onerror="this.src='https://placehold.co/150x150/ffaa33/1e3a5f?text=🐱'">
+                </div>
+                <div class="mascot-info">
+                    <h3>🧪 Наш маскот — Крис</h3>
+                    <p>Крис — любознательный учёный, который помогает школьникам осваивать науку через игру. Он встречает пользователей в приложении, даёт подсказки и радуется успехам вместе с ними!</p>
+                    <div class="mascot-facts">
+                        <span>🎓 Любит физику</span>
+                        <span>🧴 Дружит с химией</span>
+                        <span>🔬 Знает биологию</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-card">
+                <h3>📱 Присоединяйся к нам в соцсетях</h3>
+                <p>Следи за новостями проекта, участвуй в обсуждениях и делись своими успехами!</p>
+                <div class="social-links">
+					<div class="merch-item">
+                        <img src="images/VK.png" alt="Канцелярия">
+                        <h3>Наш паблик</h3>
+                        <p>Посты каждую неделю с интересными фактами и экспериментами</p>
+                    </div>
+                </div>
+                <div class="social-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">участников</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">постов в месяц</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- ПОДВАЛ -->
     <footer>

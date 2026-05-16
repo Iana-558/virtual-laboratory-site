@@ -76,7 +76,7 @@ nav ul li a.active {
     transform: translateY(-2px);
 }
 
-/* ===== ГЕРОЙ ===== */
+/* ===== ГЛАВНОЕ ===== */
 .hero {
     background: linear-gradient(135deg, #2c3e66, #1a3a5f);
     color: white;
@@ -230,12 +230,12 @@ nav ul li a.active {
 
 .screenshot {
     text-align: center;
-    max-width: 280px;
+    max-width: 400px;
 }
 
 .screenshot img {
     width: 100%;
-    max-width: 280px;
+    max-width: 400px;
     border-radius: 25px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
@@ -281,9 +281,10 @@ nav ul li a.active {
 
 /* ===== МЕРЧ ===== */
 .merch-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .merch-item {
@@ -301,7 +302,8 @@ nav ul li a.active {
 }
 
 .merch-item img {
-    width: 180px;
+    width: 100%;
+    max-width: 400px;
     height: 180px;
     object-fit: cover;
     border-radius: 20px;
@@ -380,7 +382,7 @@ nav ul li a.active {
 }
 
 .showcase-card img {
-    width: 220px;
+    width: 500px;
     height: 320px;
     object-fit: cover;
     border-radius: 25px;
