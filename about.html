@@ -5,6 +5,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Виртуальная лаборатория — наука в твоём телефоне</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    /* ===== СТРАНИЦА "О ПРОЕКТЕ" ===== */
+    .hero-subpage {
+        background: linear-gradient(135deg, #2c3e66, #1a3a5f);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero-subpage h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .hero-subpage p {
+        font-size: 20px;
+        opacity: 0.95;
+    }
+
+    /* Проблематика — карточки */
+    .problems-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    .problem-card {
+        background: white;
+        border-radius: 20px;
+        padding: 30px 25px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+
+    .problem-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .problem-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .problem-card h3 {
+        color: #1e3a5f;
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .problem-card p {
+        color: #555;
+        line-height: 1.5;
+    }
+
+    /* Блок цели */
+    .goal-block {
+        margin-bottom: 60px;
+    }
+
+    .goal-card {
+        background: linear-gradient(135deg, #1e3a5f, #2c3e66);
+        border-radius: 30px;
+        padding: 40px;
+        color: white;
+        text-align: center;
+    }
+
+    .goal-card p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
+
+    .highlight-goal {
+        color: #ffaa33;
+        font-size: 22px;
+    }
+
+    .goal-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .goal-stat {
+        text-align: center;
+    }
+
+    .goal-stat .stat-number {
+        font-size: 36px;
+        font-weight: bold;
+        color: #ffaa33;
+        display: block;
+    }
+
+    .goal-stat .stat-label {
+        font-size: 16px;
+        opacity: 0.9;
+    }
+
+    /* Таймлайн задач */
+    .tasks-block {
+        margin-bottom: 20px;
+    }
+
+    .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(135deg, #2c3e66, #ffaa33);
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .timeline-number {
+        width: 60px;
+        height: 60px;
+        background: #ffaa33;
+        border-radius: 50%;
+        display: flex;
+    align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #1e3a5f;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .timeline-content {
+        background: white;
+        border-radius: 20px;
+        padding: 20px 25px;
+        flex: 1;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+        transform: translateX(5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .timeline-content h3 {
+        color: #1e3a5f;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* Адаптация для мобильных */
+    @media (max-width: 768px) {
+        .hero-subpage h1 {
+            font-size: 32px;
+        }
+    
+        .hero-subpage p {
+            font-size: 16px;
+        }
+    
+        .goal-card p {
+            font-size: 16px;
+        }
+    
+        .timeline::before {
+            left: 20px;
+        }
+    
+        .timeline-number {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+        }
+    
+        .timeline-content {
+            padding: 15px 18px;
+        }
+    
+        .timeline-content h3 {
+            font-size: 18px;
+        }
+    }
+    </style>
 </head>
 <body>
 
@@ -24,7 +230,93 @@
         </div>
     </nav>
 
-        <!-- ПОДВАЛ -->
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <section class="section">
+        <div class="container">
+
+            <!-- ПРОБЛЕМАТИКА (карточки) -->
+            <div class="problem-block">
+                <h2 class="section-title">Проблематика</h2>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">🔬</div>
+                        <h3>Нет оборудования</h3>
+                        <p>Отсутствие в школах необходимого оборудования для лабораторных работ по физике, химии и биологии</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">🏠</div>
+                        <h3>Нельзя делать дома</h3>
+                        <p>Невозможность выполнения лабораторных работ в домашних условиях при дистанционном обучении</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="problem-icon">😐</div>
+                        <h3>Нет интереса</h3>
+                        <p>Отсутствие интереса у учеников к выполнению лабораторных работ из-за скучных традиционных форматов</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ЦЕЛЬ ПРОЕКТА (выделенный блок) -->
+            <div class="goal-block">
+                <h2 class="section-title">Цель проекта</h2>
+                <div class="goal-card">
+                    <p>Разработка мобильного приложения с элементами <strong class="highlight-goal">геймификации</strong> для выполнения <strong>11 лабораторных работ по физике</strong>, <strong>9 по химии</strong> и <strong>7 по биологии</strong> учениками 7-9 классов.</p>
+                    <div class="goal-stats">
+                        <div class="goal-stat">
+                            <span class="stat-number">11</span>
+                            <span class="stat-label">физика</span>
+                        </div>
+                        <div class="goal-stat">
+                            <span class="stat-number">9</span>
+                            <span class="stat-label">химия</span>
+                        </div>
+                        <div class="goal-stat">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">биология</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ЗАДАЧИ ПРОЕКТА (таймлайн/шаги) -->
+            <div class="tasks-block">
+                <h2 class="section-title">Задачи проекта</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-number">01</div>
+                        <div class="timeline-content">
+                            <h3>Исследование</h3>
+                            <p>Изучение образовательных потребностей и анализ существующих решений (аналогов)</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">02</div>
+                        <div class="timeline-content">
+                            <h3>Дизайн</h3>
+                            <p>Создание современного и интуитивно понятного дизайна мобильного приложения</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">03</div>
+                        <div class="timeline-content">
+                            <h3>Разработка</h3>
+                            <p>Создание мобильного приложения с интеграцией виртуальных лабораторных работ</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-number">04</div>
+                        <div class="timeline-content">
+                            <h3>Тестирование</h3>
+                            <p>Тестирование и отладка готового приложения, исправление ошибок</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
     <footer>
         <div class="container">
             <p>© 2025 Проект «Виртуальная лаборатория». Все права защищены.</p>
