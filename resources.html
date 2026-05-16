@@ -3,8 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виртуальная лаборатория — наука в твоём телефоне</title>
+    <title>Ресурсы — Виртуальная лаборатория</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ===== СТРАНИЦА "РЕСУРСЫ" ===== */
+        .resources-header {
+            background: linear-gradient(135deg, #2c3e66, #1a3a5f);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .resources-header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .resources-header p {
+            font-size: 20px;
+            opacity: 0.95;
+        }
+
+        .resources-section {
+            padding: 50px 0;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 28px;
+            color: #1e3a5f;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-subtitle::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #ffaa33;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Сетка для карточек источников */
+        .sources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .source-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-left: 5px solid #ffaa33;
+        }
+
+        .source-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+        }
+
+        .source-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .source-card h3 {
+            color: #1e3a5f;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .source-card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .source-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f0f4f8;
+            color: #1e3a5f;
+            padding: 8px 16px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .source-link:hover {
+            background: #ffaa33;
+            color: #1e3a5f;
+            transform: translateX(5px);
+        }
+
+        /* Блок партнёров и полезных ссылок */
+        .partners-links {
+            background: linear-gradient(135deg, #f5f7fa, #e9eef5);
+            border-radius: 30px;
+            padding: 40px;
+            margin-top: 30px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .partner-link-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .partner-link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .partner-link-card .emoji {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .partner-link-card h4 {
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .partner-link-card p {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #ffaa33;
+            color: #1e3a5f;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-link:hover {
+            background: #1e3a5f;
+            color: white;
+        }
+
+        /* Список всех источников (полный) */
+        .full-sources-list {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .full-sources-list h3 {
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sources-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sources-list li {
+            margin-bottom: 12px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sources-list li:hover {
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .source-num {
+            background: #ffaa33;
+            color: #1e3a5f;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .source-url {
+            flex: 1;
+            word-break: break-all;
+            color: #2c3e66;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .source-url:hover {
+            color: #ffaa33;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .resources-header h1 {
+                font-size: 32px;
+            }
+            .resources-header p {
+                font-size: 16px;
+            }
+            .section-subtitle {
+                font-size: 24px;
+            }
+            .partners-links {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -15,21 +256,118 @@
                 <span class="logo-text">Виртуальная лаборатория</span>
             </div>
             <ul>
-                <li><a href="index.html" class="active">Главная</a></li>
+                <li><a href="index.html">Главная</a></li>
                 <li><a href="about.html">О проекте</a></li>
                 <li><a href="team.html">Участники</a></li>
                 <li><a href="journal.html">Журнал</a></li>
-                <li><a href="resources.html">Ресурсы</a></li>
+                <li><a href="resources.html" class="active">Ресурсы</a></li>
             </ul>
         </div>
     </nav>
 
-        <!-- ПОДВАЛ -->
+    <!-- ЗАГОЛОВОК СТРАНИЦЫ -->
+    <div class="resources-header">
+        <h1>Полезные ресурсы</h1>
+        <p>Материалы, источники и ссылки для изучения</p>
+    </div>
+
+    <section class="resources-section">
+        <div class="container">
+
+            <!-- КАРТОЧКИ ПО ПРЕДМЕТАМ -->
+            <h2 class="section-subtitle">Учебные материалы по предметам</h2>
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-icon">⚡</div>
+                    <h3>Физика 7-9 класс</h3>
+                    <p>Учебники и методические пособия по физике для основной школы</p>
+                    <a href="#physics-sources" class="source-link">📚 Смотреть источники →</a>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">🧪</div>
+                    <h3>Химия 7-9 класс</h3>
+                    <p>Учебные материалы по химии, включая методические пособия</p>
+                    <a href="#chemistry-sources" class="source-link">📚 Смотреть источники →</a>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">🌿</div>
+                    <h3>Биология 7-9 класс</h3>
+                    <p>Учебники и пособия по биологии для средней школы</p>
+                    <a href="#biology-sources" class="source-link">📚 Смотреть источники →</a>
+                </div>
+            </div>
+
+            <!-- ПОЛЕЗНЫЕ ССЫЛКИ И ПАРТНЁРЫ -->
+            <div class="partners-links">
+                <h2 class="section-subtitle" style="margin-top: 0;">Полезные ссылки</h2>
+                <div class="links-grid">
+                    <div class="partner-link-card">
+                        <div class="emoji">🎓</div>
+                        <h4>Образовательные порталы</h4>
+                        <p>Российские образовательные ресурсы для школьников</p>
+                        <a href="https://edu.gov.ru" target="_blank" class="btn-link">Перейти →</a>
+                    </div>
+                    <div class="partner-link-card">
+                        <div class="emoji">📱</div>
+                        <h4>Telegram-канал проекта</h4>
+                        <p>Новости, обновления и обсуждения</p>
+                        <a href="#" class="btn-link">Подписаться →</a>
+                    </div>
+                    <div class="partner-link-card">
+                        <div class="emoji">🏛️</div>
+                        <h4>Вуз-партнёр</h4>
+                        <p>Поддержка и развитие проекта</p>
+                        <a href="#" class="btn-link">Сайт вуза →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ПОЛНЫЙ СПИСОК ИСТОЧНИКОВ -->
+            <div class="full-sources-list" id="physics-sources">
+                <h3>📚 Физика</h3>
+                <ul class="sources-list">
+                    <li><span class="source-num">1</span><a href="https://sh2-neman-r27.gosweb.gosuslugi.ru/netcat_files/30/50/Fizika_7_klass.pdf" target="_blank" class="source-url">Физика 7 класс — учебник</a></li>
+                    <li><span class="source-num">2</span><a href="https://sh2-neman-r27.gosweb.gosuslugi.ru/netcat_files/30/50/Fizika_8_klass.pdf" target="_blank" class="source-url">Физика 8 класс — учебник</a></li>
+                    <li><span class="source-num">3</span><a href="https://sh2-neman-r27.gosweb.gosuslugi.ru/netcat_files/30/50/Fizika_9_klass.pdf" target="_blank" class="source-url">Физика 9 класс — учебник</a></li>
+                </ul>
+            </div>
+
+            <div class="full-sources-list" id="biology-sources">
+                <h3>🔬 Биология</h3>
+                <ul class="sources-list">
+                    <li><span class="source-num">4</span><a href="https://test-edu.tatar.ru/upload/storage/org6297/files/biologija_-7-klass_konstantinov_v_m_-i-dr_2016-288s.pdf" target="_blank" class="source-url">Биология 7 класс — Константинов В.М. и др.</a></li>
+                    <li><span class="source-num">5</span><a href="https://spu58.ucoz.ru/Electron_bibl/konstantinov_obshhaja_biologija.pdf" target="_blank" class="source-url">Общая биология — Константинов В.М.</a></li>
+                </ul>
+            </div>
+
+            <div class="full-sources-list" id="chemistry-sources">
+                <h3>🧪 Химия</h3>
+                <ul class="sources-list">
+                    <li><span class="source-num">6</span><a href="https://www.beluo31.ru/doc/Metodicheskoe%20posobie%20dlia%20uchitelei%60%20Himii%207%20class.pdf" target="_blank" class="source-url">Методическое пособие по химии 7 класс</a></li>
+                    <li><span class="source-num">7</span><a href="https://sh2-nemanr27.gosweb.gosuslugi.ru/netcat_files/30/50/Himiya_8_klass.pdf" target="_blank" class="source-url">Химия 8 класс — учебник</a></li>
+                    <li><span class="source-num">8</span><a href="https://sh2-neman-r27.gosweb.gosuslugi.ru/netcat_files/30/50/Himiya_9_klass.pdf" target="_blank" class="source-url">Химия 9 класс — учебник</a></li>
+                </ul>
+            </div>
+
+            <!-- ДОПОЛНИТЕЛЬНЫЕ РЕСУРСЫ -->
+            <div class="full-sources-list">
+                <h3>💡 Дополнительные материалы</h3>
+                <ul class="sources-list">
+                    <li><span class="source-num">📱</span><a href="#" class="source-url">Telegram-бот проекта — ссылка для доступа</a></li>
+                    <li><span class="source-num">🌐</span><a href="index.html" class="source-url">Сайт проекта «Виртуальная лаборатория»</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
     <footer>
         <div class="container">
             <p>© 2025 Проект «Виртуальная лаборатория». Все права защищены.</p>
             <p class="footer-small">Проектная деятельность — создание статического веб-сайта</p>
         </div>
     </footer>
+
 </body>
 </html>
